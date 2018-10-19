@@ -1,11 +1,13 @@
 var mysql = require('mysql')
 
+var db = process.env.NODE_ENV === 'test' ? 'biblioteca_test' : 'biblioteca'
+
 var connection = mysql.createConnection({
   host: 'localhost',
-  puerto: '3306',
+  port: '3306',
   user: 'root',
-  password:'qwerasdf',
-  database: 'biblioteca'
+  password: '',
+  database: db
 })
 
 module.exports = connection

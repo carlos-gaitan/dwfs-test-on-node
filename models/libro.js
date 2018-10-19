@@ -1,16 +1,18 @@
 var connection = require('../database')
-var libro = function(titulo, isbn) {
+
+var Libro = function(titulo, isbn) {
   this.titulo = titulo;
   this.isbn = isbn;
 }
 
-// libro.obtenerLista = function(cb) {
-//   connection.query('SELECT titulo, isbn FROM libros', function(err, res) {
-//     cb(err, res)
-//   } )
-// }
-
-libro.obtenerLista = function(cb) {
+Libro.obtenerLista = function (cb) {
   connection.query('SELECT titulo, isbn FROM libros', cb)
 }
-module.exports = libro;
+
+Libro.agregar = function (data, cb) {
+  var sqlQuery = `INSERT INTO libros (titulo, isbn)
+    VALUES ('${data.titulo}', '${data.isbn}')`
+  connection.query(sqlQuery, cb)
+}
+
+module.exports = Libro

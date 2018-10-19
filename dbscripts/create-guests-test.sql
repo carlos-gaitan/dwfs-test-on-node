@@ -1,0 +1,12 @@
+DROP DATABASE IF EXISTS biblioteca_test;
+
+CREATE DATABASE biblioteca_test;
+
+USE biblioteca_test;
+
+CREATE TABLE IF NOT EXISTS libros (
+  id INT NOT NULL AUTO_INCREMENT,
+  titulo VARCHAR(255) NOT NULL,
+  isbn VARCHAR(255) NOT NULL,
+  PRIMARY KEY(id)
+);
