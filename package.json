@@ -6,7 +6,7 @@
   "scripts": {
     "test": "NODE_ENV=test node_modules/.bin/mocha --recursive"
   },
-  "author": "Diego",
+  "author": "elcharly",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",

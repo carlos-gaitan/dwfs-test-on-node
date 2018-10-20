@@ -4,10 +4,10 @@ const path = require('path')
 before(function(done) {
   execSQL.connect({
     database: 'biblioteca_test',
-    user: 'root',
-    password: ''
+    user: 'elcharly',
+    password: 'qweasd'
   })
-  
+
   execSQL.executeFile(path.join(__dirname, '../dbscripts/create-guests-test.sql'), function(err) {
     execSQL.disconnect();
     if (err) {
